@@ -74,10 +74,6 @@ feeds:
     uri: ssh://git@git.maxlinear.com/ugw-oss/feeds/feed_dpl.git
     tracking_branch:  updk_9.1.80
     revision: 3062ecaffbf451155bcdd75482fc47e7bff37801
-  - name: voice_cpe
-    uri: ssh://git@git.maxlinear.com/ugw-oss/feeds/feed_voice_cpe.git
-    tracking_branch:  updk_9.1.80
-    revision: 041c1f390b6111256cb9f94cf525760b444243f0
   - name: speedtest
     uri: ssh://git@git.maxlinear.com/mxl-oss/speedtest.git
     tracking_branch:  updk_9.1.80
@@ -178,19 +174,6 @@ packages:
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
   - kmod-mxl_gpy
-  - kmod-voice-tapi
-  - kmod-voice-lgm
-  - kmod-voice-lgm-c55
-  - kmod-voice-lgm-cru
-  - kmod-voice-lgm-irq
-  - kmod-voice-lgm-slic200
-  - kmod-voice-ni
-  - kmod-voice-sdd-mbx
-  - voice-c55-firmware
-  - voice-tapi-cli
-  - voice-tapi-lib-nlt
-  - voice-tapidemo-slic
-  - voice-tapidump
   #- secure-utils
   - fwupgrade
   - xl2tpd-prpl
