@@ -8,95 +8,100 @@ description: Build images for the Maxlinear x86 devices - URX641 and URX851
 feeds:
   - name: intel_x86
     uri: ssh://git@github.com/maxlinear/feed_target_x86.git
-    tracking_branch:  updk_9.1.80
-    revision: 220b585ca07e11659a72004d94a372eaca82cc3e
+    tracking_branch:  updk_9.1.90
+    revision: efaa0ce9b8f3cebdbb372b492df8b6fb3f40300c
   - name: rootfs
     uri: ssh://git@github.com/maxlinear/rootfs.git
-    tracking_branch:  updk_9.1.80
-    revision: cc409bb876db350a89989a460bb050e645d706a1
+    tracking_branch:  updk_9.1.90
+    revision: ffbfe7e976a5552ad9b104347a2d0319c6bd9be4
   - name: eip
     uri: ssh://git@github.com/maxlinear/feed_eip.git
-    tracking_branch:  updk_9.1.80
+    tracking_branch:  updk_9.1.90
     revision: 1c75281baf89430363b98540bc044bb9c04f98f4
+  - name: mcast_service
+    uri: ssh://git@github.com/maxlinear/feed_mcast_service.git
+    tracking_branch:  updk_9.1.90
+    revision: 93f425c13df78257ee0dacbe0d95283d32fdf192
   - name: datapath
     uri: ssh://git@github.com/maxlinear/feed_datapath.git
-    tracking_branch:  updk_9.1.80
-    revision: 84d24a7b48289f342054a514718c231bab84d57c
+    tracking_branch:  updk_9.1.90
+    revision: fa3223d4ef143f7fa76c884d9f9bdf9623032d7a
   - name: gphy_firmware
     uri: ssh://git@github.com/maxlinear/feed_gphy_firmware.git
-    tracking_branch:  updk_9.1.80
+    tracking_branch:  updk_9.1.90
     revision: ce6283378bd3f52809e3d95fe7dbf9f1ce223d82
   - name: gwdpa_dpm
     uri: ssh://git@github.com/maxlinear/feed_gwdpa-dpm.git
-    tracking_branch:  updk_9.1.80
-    revision: e39c8ea73045a77baacdf6e777d086c2cdf15ac9
+    tracking_branch:  updk_9.1.90
+    revision: 070c91ea194655def9732fe595a7764c682b572b
   - name: misc
     uri: ssh://git@github.com/maxlinear/feed_common.git
-    tracking_branch:  updk_9.1.80
+    tracking_branch:  updk_9.1.90
     revision: 84cfc29abaaeb98a21226df759cdc435c62c3729
   - name: opensource_apps_prpl
     uri: ssh://git@github.com/maxlinear/feed_opensource_apps_prpl.git
-    tracking_branch:  updk_9.1.80
-    revision: 35682fdc1ea3e9e0b13a0a00e7ef2447665be7eb
+    tracking_branch:  updk_9.1.90
+    revision: 47e2694f657f26ed749cd00b7825dc43116bb28a
   - name: packet_learn
     uri: ssh://git@github.com/maxlinear/feed_packet_learn.git
-    tracking_branch:  updk_9.1.80
-    revision: 2e444248d0a72948ff18db6d812aacaa3d987fd7
+    tracking_branch:  updk_9.1.90
+    revision: d349a2598551ffb905a0856de3047700387ded3d
   - name: pon
     uri: ssh://git@github.com/maxlinear/feed_pon.git
-    tracking_branch:  updk_9.1.80
-    revision: c748f3e4c9d73d9e7a9fa1eb30162b489fd65357
+    tracking_branch:  updk_9.1.90
+    revision: 7d92436b39cd986962f7518a1cf457cf09957979
   - name: ppa
     uri: ssh://git@github.com/maxlinear/feed_ppa.git
-    tracking_branch:  updk_9.1.80
-    revision: 5c4014926bdbd26e8d6e4d12e2b51d5cfe102ee9
+    tracking_branch:  updk_9.1.90
+    revision: b9b0e341e0ce58d37c13aaa105689c0837fffc1a
   - name: pp_net_adapter
     uri: ssh://git@github.com/maxlinear/feed_pp_net_adapter.git
-    tracking_branch:  updk_9.1.80
-    revision: d02c3a7eebd3f01a309557c05e23e0be11fb8c84
+    tracking_branch:  updk_9.1.90
+    revision: 6693062f60676b8008a0966a5b4aefe578d073df
   - name: vpn_fw
     uri: ssh://git@github.com/maxlinear/feed_vpn_fw.git
-    tracking_branch:  updk_9.1.80
-    revision: acc418fe2afb9190a4e97c9831c8d3057b331859
+    tracking_branch:  updk_9.1.90
+    revision: ccc16ef0b3ca93c2bfc71b86a4692fac1367dc55
   - name: qos
     uri: ssh://git@github.com/maxlinear/feed_qos_tc.git
-    tracking_branch:  updk_9.1.80
-    revision: 2aa0f5a48a3c589fd58a5598409a15d73e6ce891
+    tracking_branch:  updk_9.1.90
+    revision: 9bbf8bbc292747255b905ee964d00aa9c9a5bed9
   - name: utils
     uri: ssh://git@github.com/maxlinear/feed_mxl_utils.git
-    tracking_branch:  updk_9.1.80
-    revision: 3a1fe6d2a54fc62b6e51371321f270a64d82e009
+    tracking_branch:  updk_9.1.90
+    revision: 80faf1ba6e5fa386fe8a4dde7c1d7af516f1f431
   - name: bootloader
     uri: ssh://git@github.com/maxlinear/feed_uboot.git
-    tracking_branch:  updk_9.1.80
-    revision: dc856c42a929be9f21c13338d2f71a1e27eeee83
+    tracking_branch:  updk_9.1.90
+    revision: 17634d4ef49c8ced72994818689f37f98323bf47
   - name: dpl
     uri: ssh://git@github.com/maxlinear/feed_dpl.git
-    tracking_branch:  updk_9.1.80
-    revision: e82c5a1c565b31950b070b681b4e1060db3d94ab
+    tracking_branch:  updk_9.1.90
+    revision: fc2be84aa0d3c20d095772cab3f677ab0d0abb59
   - name: speedtest
     uri: ssh://git@github.com/maxlinear/speedtest.git
-    tracking_branch:  updk_9.1.80
+    tracking_branch:  updk_9.1.90
     revision: d050e55046b7f13d4542599f6f1ff4f017458f8a
   - name: mxl_sdk
     uri: ssh://git@github.com/maxlinear/feed_mxl_sdk.git
-    tracking_branch:  updk_9.1.80
-    revision: a9e47bfb09e5dff77f47d9bba0987a613925370c
+    tracking_branch:  updk_9.1.90
+    revision: f5bd4207f871c19fcf72791f2982cc379a5a7a82
   - name: system_service
     uri: ssh://git@github.com/maxlinear/feed_system_service.git
-    tracking_branch:  updk_9.1.80
-    revision: 03e079fbdaa0d63764ee91a1c8cdcb19e3ff0baf
+    tracking_branch:  updk_9.1.90
+    revision: 6ae304e7de36865706443a67245f57e3e531a267
 
 additional_packages:
   - feed: packages
     packages:
-      - openvswitch
-      - pciutils
       - strongswan
+      - pciutils
+      - openvswitch
       - vsftpd
 
 packages:
   - kmod-mxl_eth_drv
+  - kmod-mxl-xpcs
   - kmod-gwdpa-dpm
   - kmod-pp_net_adapter
   - kmod-packet_learn
@@ -115,7 +120,7 @@ packages:
   - kmod-ppv4
   - kmod-p34x_phy_fwdl
   - mxl-gphy-fw-lgm
-  #- netifd-ugw
+  # - netifd-ugw
   - e2fsprogs
   - kmod-directconnect-dp
   - kmod-ppa-drv
@@ -158,9 +163,10 @@ packages:
   - kmod-mxl_pon_hgu_vuni_lgm
   - kmod-ebt-prio
   - ethtool
-  - base-files-prpl
+  - base-files-prpl-mb_urx
   - ppmd-bin
   - pm-util
+  - map
   - kmod-intel-qos
   - kmod-qos-tc
   - partx-utils
@@ -168,38 +174,37 @@ packages:
   - speedtest-modules
   - kmod-dpl
   - kmod-gpio-button-hotplug
-  - kmod-mxl_gpy
   - libugwhelper
   - libmsgapi
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
   - kmod-mxl_gpy
-  #- secure-utils
-  - fwupgrade
   - xl2tpd-prpl
+  - kmod-mcast-helper
 
 diffconfig: |
   CONFIG_DEVEL=y
   CONFIG_EXTRA_OPTIMIZATION="-fno-caller-saves -fno-plt -Wno-error=deprecated-declarations -Wno-error=address"
   CONFIG_KERNEL_GIT_CLONE_URI="ssh://git@github.com/maxlinear/linux.git"
-  CONFIG_KERNEL_GIT_REF="UPDK_9.1.80"
+  CONFIG_KERNEL_GIT_REF="UPDK_9.1.90"
   CONFIG_GPON_OMCI_ONU_UBUS_INTERFACE=y
   CONFIG_TARGET_MULTI_PROFILE=y
   CONFIG_TARGET_PER_DEVICE_ROOTFS=y
   CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_MB_URX=y
   # CONFIG_TARGET_ROOTFS_EXT4FS is not set
   CONFIG_BUILD_LOG=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-10g-lan-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx641-p34x-phy-emmc-prpl=y
-  # CONFIG_PACKAGE_uboot-octopus-urx641-p34x-phy-emmc-prpl_overlay is not set
-  # CONFIG_PACKAGE_uboot-octopus-urx641-10g-lan-emmc-prpl is not set
-  # CONFIG_PACKAGE_uboot-octopus-urx851-10g-lan-emmc-prpl is not set
-  # CONFIG_PACKAGE_uboot-octopus-urx851-p34x-phy-emmc-prpl is not set
+  CONFIG_PACKAGE_uboot-octopus-urx851-10g-lan-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx851-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-10g-lan-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-10g-lan-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-p34x-phy-emmc-prpl=y
   CONFIG_VERSION_FILENAMES=n
   CONFIG_VERSION_CODE_FILENAMES=n
   # CONFIG_PACKAGE_bios_images is not set
   CONFIG_BUILD_SDK="prplos"
-  # CONFIG_INTEL_X86_IMAGE_FORMAT_FIT is not set
-  CONFIG_INTEL_X86_IMAGE_FORMAT_MKIMAGE=y
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_BUSYBOX_CONFIG_TFTPD=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_GET=y
@@ -243,3 +248,6 @@ diffconfig: |
   CONFIG_PACKAGE_strongswan-mod-xcbc=y
   CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
+  CONFIG_INTEL_X86_IMAGE_FORMAT_FIT=y
+  CONFIG_INTEL_X86_IMAGE_FORMAT_MKIMAGE=y
+  CONFIG_INTEL_X86_SINGLE_IMAGE=y
