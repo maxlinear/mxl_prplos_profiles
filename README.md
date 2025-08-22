@@ -6,23 +6,23 @@ Select the appropriate profile to build images for any supported Maxlinear platf
  
 ## QuickStart:
  
-Below are sample steps to build the Mxl UPDK Software for UPDK-9.1.90 Release.
+Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.0 Release.
  
-Complete these steps to create the basic software build for the OSPv1,OSPv2,URX851‑HDK‑2, MxL25641‑HDK‑2, with OpenWrt 23.05:
+Complete these steps to create the basic software build for the OSPv2,OSPv2 B,MxL25641‑HDK‑2, with OpenWrt 24.10:
  
 #### 1. Clone prplOS repository from prpl Foundation:
 
-git clone -b mainline-23.05 https://gitlab.com/prpl-foundation/prplos/prplos
+git clone -b latest-24.10 https://gitlab.com/prpl-foundation/prplos/prplos
 
 #### 2. Select the configuration to build and synchronize files for building the UPDK Software:
 
 cd prplos
 
-git checkout UPDK-9.1.90
+git checkout UPDK_9.2.0
 
 #### 3. Clone the prplos_mxl_profiles repository to obtain the required profile for any platforms.
 
-git clone -b updk_9.1.90 git@github.com:maxlinear/mxl_prplos_profiles.git
+git clone -b updk_9.1.90 https://github.com/maxlinear/mxl_prplos_profiles.git
 
 cp mxl_prplos_profiles/profiles/* profiles/
 
@@ -32,15 +32,20 @@ a) OSPv2
 
 ./scripts/gen_config.py mxl_x86_osp_tb341_v2 mxl_wlan_hostap_ng_wav700 prpl
 
-b) MxL25641‑HDK‑2 and URX851‑HDK‑2
+b) OSPv2 B
 
-./scripts/gen_config.py mxl_x86_mb_urx.yml mxl_wlan_hostap_ng_wav700 prpl
+./scripts/gen_config.py mxl_x86_osp_wgrtd159be_b_v2 mxl_wlan_hostap_ng_wav700 prpl
+
+c) MxL25641‑HDK‑2
+
+./scripts/gen_config.py mxl_x86_mb_urx mxl_wlan_hostap_ng_wav700 prpl
 
 #### 5. Type below command to start the build
 make -j8
 
-#### Note: Built images are located in the prplos/bin/targets/intel_x86/lgm/ folder.
-#### The U-Boot images are located in the prplos/bin/targets/intel_x86/lgm/uboot-intel-x86 folder.
+#### Note: Built images are located in the 'prplos/bin/targets/intel_x86/lgm/single-images' folder.
+#### The U-Boot images for OSPv2 & MXL25641-HDK2 are located in the 'prplos/bin/targets/intel_x86/lgm/uboot-octopus-urx641-overlay-fit-p34x-phy-emmc-prpl/' folder.
+#### The U-Boot images for OSPv2 B are located in the 'prplos/bin/targets/intel_x86/lgm/uboot-octopus-urx641-4GB-ddr-overlay-fit-p34x-phy-emmc-prpl/' folder
  
 #### For more details please refer to the prpl foundation link below.
  
@@ -49,33 +54,35 @@ https://gitlab.com/prpl-foundation/prplos/prplos/-/wikis/Maxlinear-Open-Service-
 
 #### OSPV2 Image details:
 
-prplos-intel_x86-lgm-PRPL_OSP_TB341_v2-osp_tb341_v2_wav700_eth_fullimage.img  **->** **Fullimage for ETH WAN.**
+prplos-intel_x86-lgm-PRPL_OSP_TB341_v2-osp_tb341_v2_wav700_fullimage.fit  **->** **Fullimage for ETH WAN/PON WAN.**
 
-prplos-intel_x86-lgm-PRPL_OSP_TB341_v2-osp_tb341_v2_wav700_pon_fullimage.img  **->** **Fullimage for PON WAN.**
+prplos-intel_x86-lgm-PRPL_OSP_TB341_v2-osp_tb341_v2_wav700_kernel_dtb.fit  **->** **Kernel+dtb**
 
-prplos-intel_x86-lgm-PRPL_OSP_TB341_v2-osp_tb341_v2_wav700_eth.dtb 	          **->** **Devicetree for ETH WAN.**
+ext4.fs -> **ext4 file system.**
 
-prplos-intel_x86-lgm-PRPL_OSP_TB341_v2-osp_tb341_v2_wav700_pon.dtb 	          **->** **Devicetree for PON WAN.**
+u-boot.itb, u-boot-plus-spl-emmc.bin                                          **->** **U-Boot binary file.**
 
-ext4.fs 								                                                              **->** **ext4 file system.**
+u-boot-recovery.asc 							                                                   **->** **U-Boot recovery file.**
 
-u-boot-plus-spl-emmc.bin 						                                              **->** **U-Boot binary file.**
+#### OSPV2-B Image details:
+prplos-intel_x86-lgm-PRPL_OSPv2_WGRTD159BE_B-wav700_fullimage.fit             **->** **Fullimage for ETH WAN/PON WAN**
 
-u-boot-recovery.asc 							                                                   **->** **U-Boot recovery file**
+prplos-intel_x86-lgm-PRPL_OSPv2_WGRTD159BE_B-wav700_kernel_dtb.fit            **->** **Kernel+dtb.**
+
+ext4.fs                                                                       **->** **ext4 file system.**
+
+u-boot.itb, u-boot-plus-spl-emmc.bin                                          **->** **U-Boot binary file.**
+
+u-boot-recovery.asc                                                           **->** **U-Boot recovery file.**
 
 #### MxL25641‑HDK‑2 Image details:
 
-prplos-intel_x86-lgm-PRPL_MB_URX641_wav700_eth_fullimage.img  **->** **Fullimage for ETH WAN.**
+prplos-intel_x86-lgm-PRPL_MB_URX-641_wav700_fullimage.fit                    **->** **Fullimage for ETH WAN/PON WAN.**
 
-prplos-intel_x86-lgm-PRPL_MB_URX641_wav700_pon_fullimage.img  **->** **Fullimage for PON WAN.**
+prplos-intel_x86-lgm-PRPL_MB_URX-641_wav700_kernel_dtb.fit                   **->** **kernel+dtb.**
 
-prplos-intel_x86-lgm-PRPL_MB_URX-641.dtb 	                    **->** **Devicetree for ETH WAN.**
+ext4.fs                                                                      **->** **ext4 file system.**
 
-prplos-intel_x86-lgm-PRPL_MB_URX641_pon.dtb	                  **->** **Devicetree for PON WAN.**
+u-boot.itb, u-boot-plus-spl-emmc.bin                                         **->** **U-Boot binary file.**
 
-ext4.fs 								                                              **->** **ext4 file system.**
-
-u-boot-plus-spl-emmc.bin 						                               **->** **U-Boot binary file.**
-
-u-boot-recovery.asc 							                                   **->** **U-Boot recovery file**
-
+u-boot-recovery.asc                                                          **->** **U-Boot recovery file.**
