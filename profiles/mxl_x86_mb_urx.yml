@@ -21,7 +21,7 @@ feeds:
   - name: mcast_service
     uri: https://github.com/maxlinear/feed_mcast_service.git
     tracking_branch:  updk_9.2.0
-    revision: 1ad06880fe1ae9ccd0afa40c81115442c0bf8d81
+    revision: 45e3296ae88a1314b8d952b908436b4e0f872004
   - name: datapath
     uri: https://github.com/maxlinear/feed_datapath.git
     tracking_branch:  updk_9.2.0

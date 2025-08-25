@@ -22,7 +22,7 @@ git checkout UPDK_9.2.0
 
 #### 3. Clone the prplos_mxl_profiles repository to obtain the required profile for any platforms.
 
-git clone -b updk_9.1.90 https://github.com/maxlinear/mxl_prplos_profiles.git
+git clone -b updk_9.2.0 https://github.com/maxlinear/mxl_prplos_profiles.git
 
 cp mxl_prplos_profiles/profiles/* profiles/
 
