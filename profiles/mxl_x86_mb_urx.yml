@@ -25,7 +25,7 @@ feeds:
   - name: datapath
     uri: https://github.com/maxlinear/feed_datapath.git
     tracking_branch:  updk_9.2.0
-    revision: 28a97efd2e7c7821bc8465ee8878c611f81460aa
+    revision: 1d42e8cd36b63a9a56455c0228aa0ab7ffc32c7c
   - name: gphy_firmware
     uri: https://github.com/maxlinear/feed_gphy_firmware.git
     tracking_branch:  updk_9.2.0
