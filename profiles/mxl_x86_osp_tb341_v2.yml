@@ -13,7 +13,7 @@ feeds:
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.1.95
-    revision: 1f3b81b722049dcea2d314d6345c4e781124888f
+    revision: 8ea588ee28fb3c025cf06b0a12332f319762c58b
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.1.95
@@ -73,7 +73,7 @@ feeds:
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.1.95
-    revision: 8f842778c763ce681ed6872b30b5c8574bddb3e3
+    revision: 718b685e2ab6e445e3ff372b1348e2f02627c049
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.1.95
