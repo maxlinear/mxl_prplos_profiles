@@ -1,10 +1,10 @@
 ---
 profiles:
-  - PRPL_MB_URX
+  - PRPL_OSPv2_WGRTD159BE_B
 target: intel_x86
 subtarget: lgm
 external_target: True
-description: Build images for the Maxlinear x86 devices - URX641 and URX851
+description: Build images for the Maxlinear x86 devices - OSP TB341 v2
 feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
@@ -91,14 +91,6 @@ feeds:
     tracking_branch:  updk_9.1.100
     revision: 446e7583484e2a3b8677c1999541788572a4ae74
 
-additional_packages:
-  - feed: packages
-    packages:
-      - strongswan
-      - pciutils
-      - vsftpd
-      - vxlan
-
 packages:
   - kmod-mxl_eth_drv
   - kmod-mxl-xpcs
@@ -120,7 +112,6 @@ packages:
   - kmod-ppv4
   - kmod-p34x_phy_fwdl
   - mxl-gphy-fw-lgm
-  # - netifd-ugw
   - e2fsprogs
   - kmod-directconnect-dp
   - kmod-ppa-drv
@@ -162,7 +153,7 @@ packages:
   - kmod-pon-mcc-drv-filter
   - kmod-mxl_pon_hgu_vuni_lgm
   - kmod-ebt-prio
-  - ethtool
+  - ethtool-full
   - base-files-prpl
   - ppmd-bin
   - pm-util
@@ -173,15 +164,12 @@ packages:
   - obudpst
   - speedtest-modules
   - kmod-dpl
-  - kmod-gpio-button-hotplug
+  - kmod-mxl_gpy
   - libugwhelper
   - libmsgapi
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
-  - kmod-mxl_gpy
   - kmod-mcast-helper
-  - xl2tpd-prpl
-  - openvswitch
 
 diffconfig: |
   CONFIG_DEVEL=y
@@ -191,11 +179,10 @@ diffconfig: |
   CONFIG_GPON_OMCI_ONU_UBUS_INTERFACE=y
   CONFIG_TARGET_MULTI_PROFILE=y
   CONFIG_TARGET_PER_DEVICE_ROOTFS=y
-  CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_MB_URX=y
+  CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_OSPv2_WGRTD159BE_B=y
   # CONFIG_TARGET_ROOTFS_EXT4FS is not set
   CONFIG_BUILD_LOG=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-4GB-ddr-overlay-fit-p34x-phy-emmc-prpl=y
   CONFIG_VERSION_FILENAMES=n
   CONFIG_VERSION_CODE_FILENAMES=n
   # CONFIG_PACKAGE_bios_images is not set
@@ -206,40 +193,4 @@ diffconfig: |
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_PUT=y
   CONFIG_BUSYBOX_CONFIG_TFTP=y
   CONFIG_LGM_EIP123_SUPPORT=y
-  CONFIG_PACKAGE_strongswan-charon=y
-  CONFIG_PACKAGE_strongswan-default=y
-  CONFIG_PACKAGE_strongswan-ipsec=y
-  CONFIG_PACKAGE_strongswan-mod-aes=y
-  CONFIG_PACKAGE_strongswan-mod-attr=y
-  CONFIG_PACKAGE_strongswan-mod-connmark=y
-  CONFIG_PACKAGE_strongswan-mod-constraints=y
-  CONFIG_PACKAGE_strongswan-mod-des=y
-  CONFIG_PACKAGE_strongswan-mod-dnskey=y
-  CONFIG_PACKAGE_strongswan-mod-fips-prf=y
-  CONFIG_PACKAGE_strongswan-mod-gmp=y
-  CONFIG_PACKAGE_strongswan-mod-hmac=y
-  CONFIG_PACKAGE_strongswan-mod-kdf=y
-  CONFIG_PACKAGE_strongswan-mod-kernel-netlink=y
-  CONFIG_PACKAGE_strongswan-mod-md5=y
-  CONFIG_PACKAGE_strongswan-mod-mgf1=y
-  CONFIG_PACKAGE_strongswan-mod-nonce=y
-  CONFIG_PACKAGE_strongswan-mod-pem=y
-  CONFIG_PACKAGE_strongswan-mod-pgp=y
-  CONFIG_PACKAGE_strongswan-mod-pkcs1=y
-  CONFIG_PACKAGE_strongswan-mod-pubkey=y
-  CONFIG_PACKAGE_strongswan-mod-random=y
-  CONFIG_PACKAGE_strongswan-mod-rc2=y
-  CONFIG_PACKAGE_strongswan-mod-resolve=y
-  CONFIG_PACKAGE_strongswan-mod-revocation=y
-  CONFIG_PACKAGE_strongswan-mod-sha1=y
-  CONFIG_PACKAGE_strongswan-mod-sha2=y
-  CONFIG_PACKAGE_strongswan-mod-socket-default=y
-  CONFIG_PACKAGE_strongswan-mod-sshkey=y
-  CONFIG_PACKAGE_strongswan-mod-stroke=y
-  CONFIG_PACKAGE_strongswan-mod-updown=y
-  CONFIG_PACKAGE_strongswan-mod-vici=y
-  CONFIG_PACKAGE_strongswan-mod-x509=y
-  CONFIG_PACKAGE_strongswan-mod-xauth-generic=y
-  CONFIG_PACKAGE_strongswan-mod-xcbc=y
-  CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
