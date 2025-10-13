@@ -96,7 +96,6 @@ additional_packages:
     packages:
       - strongswan
       - pciutils
-      - openvswitch
       - vsftpd
 
 packages:
@@ -181,6 +180,7 @@ packages:
   - kmod-mxl_gpy
   - xl2tpd-prpl
   - kmod-mcast-helper
+  - openvswitch
 
 diffconfig: |
   CONFIG_DEVEL=y

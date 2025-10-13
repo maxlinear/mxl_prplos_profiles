@@ -95,7 +95,6 @@ additional_packages:
   - feed: packages
     packages:
       - strongswan
-      - openvswitch
       - vsftpd
       - usbutils
       - pciutils
@@ -183,6 +182,7 @@ packages:
   - sse_fapi_lgm-sse_test_app
   - xl2tpd-prpl
   - kmod-mcast-helper
+  - openvswitch
 
 diffconfig: |
   CONFIG_DEVEL=y
