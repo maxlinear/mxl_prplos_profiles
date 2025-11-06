@@ -18,7 +18,7 @@ git clone -b latest-24.10 https://gitlab.com/prpl-foundation/prplos/prplos
 
 cd prplos
 
-git checkout UPDK_9.2.0
+git checkout UPDK-9.2.0
 
 #### 3. Clone the prplos_mxl_profiles repository to obtain the required profile for any platforms.
 
