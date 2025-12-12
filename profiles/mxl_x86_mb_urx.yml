@@ -49,7 +49,7 @@ feeds:
   - name: pon
     uri: https://github.com/maxlinear/feed_pon.git
     tracking_branch:  updk_9.1.100
-    revision: 9141796c3727d4a4c075162f2a8257d31d40c226
+    revision: 8a6d5394eaa0f0fd2efeb960f6cd333120f48f7a
   - name: ppa
     uri: https://github.com/maxlinear/feed_ppa.git
     tracking_branch:  updk_9.1.100
