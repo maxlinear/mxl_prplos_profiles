@@ -177,7 +177,7 @@ diffconfig: |
   CONFIG_DEVEL=y
   CONFIG_EXTRA_OPTIMIZATION="-fno-caller-saves -fno-plt -Wno-error=deprecated-declarations -Wno-error=address"
   CONFIG_KERNEL_GIT_CLONE_URI="https://github.com/maxlinear/linux.git"
-  CONFIG_KERNEL_GIT_REF="UPDK_9.2.3"
+  CONFIG_KERNEL_GIT_REF="UPDK_9.2.3_CELL_MODULE_FIX"
   CONFIG_GPON_OMCI_ONU_UBUS_INTERFACE=y
   CONFIG_TARGET_MULTI_PROFILE=y
   CONFIG_TARGET_PER_DEVICE_ROOTFS=y
