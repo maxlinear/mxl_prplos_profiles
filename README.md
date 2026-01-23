@@ -20,7 +20,7 @@ cd prplos
 
 #### 3. Clone the prplos_mxl_profiles repository to obtain the required profile for any platforms.
 
-git clone -b updk_9.2.3 https://github.com/maxlinear/mxl_prplos_profiles.git
+git clone -b updk_9.2.4 https://github.com/maxlinear/mxl_prplos_profiles.git
 
 cp mxl_prplos_profiles/profiles/* profiles/
 
