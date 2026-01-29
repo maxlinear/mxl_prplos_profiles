@@ -33,11 +33,11 @@ feeds:
   - name: gwdpa_dpm
     uri: https://github.com/maxlinear/feed_gwdpa-dpm.git
     tracking_branch:  updk_9.2.4
-    revision: deb0e22bc9ce493de613d80f3606b9856d0a0e74
+    revision: f01fb884e1c0a2e5a2f0e069dc8b69e101a35344
   - name: misc
     uri: https://github.com/maxlinear/feed_common.git
     tracking_branch:  updk_9.2.4
-    revision: 4ae22251d758a2dcd6d5b60b135d3bccda57b8a9
+    revision: e7d4a7d576aff7ab3207f2f7261629542b7931a1
   - name: opensource_apps_prpl
     uri: https://github.com/maxlinear/feed_opensource_apps_prpl.git
     tracking_branch:  updk_9.2.4
@@ -45,19 +45,19 @@ feeds:
   - name: packet_learn
     uri: https://github.com/maxlinear/feed_packet_learn.git
     tracking_branch:  updk_9.2.4
-    revision: b9796144e44dd21d733fda1831a40fa4f295151b
+    revision: a866156354e0e119a3f9e7b6bdca126c1e182b96
   - name: pon
     uri: https://github.com/maxlinear/feed_pon.git
     tracking_branch:  updk_9.2.4
-    revision: 6e501cf668f5c789642f818b3c53662e1e07f14c
+    revision: 5281dcc6772c79260a228f48c64c0a9949ee6982
   - name: ppa
     uri: https://github.com/maxlinear/feed_ppa.git
     tracking_branch:  updk_9.2.4
-    revision: 9bf20d46be84bea23d682529910925fce4c9043b
+    revision: 6345a65090261897fd3c0f822f9ac587d8240bfe
   - name: pp_net_adapter
     uri: https://github.com/maxlinear/feed_pp_net_adapter.git
     tracking_branch:  updk_9.2.4
-    revision: 22fe30aecf6841e6dbf6758f4cb543416a2f19d0
+    revision: 6dacd7c6c4b20f385d7de32efe0d1eefc4aa5ac5
   - name: vpn_fw
     uri: https://github.com/maxlinear/feed_vpn_fw.git
     tracking_branch:  updk_9.2.4
