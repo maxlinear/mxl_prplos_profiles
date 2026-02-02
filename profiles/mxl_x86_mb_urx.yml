@@ -99,18 +99,27 @@ additional_packages:
       - vsftpd
 
 packages:
+  - efr32-boot-config
   - kmod-mxl_eth_drv
   - kmod-mxl-xpcs
   - kmod-gwdpa-dpm
   - kmod-pp_net_adapter
   - kmod-packet_learn
+  - blockd
+  - kmod-phy-lgm-usb
+  - kmod-usb-acm
+  - kmod-usb-dwc3-intel
+  - kmod-usb-net-cdc-mbim
+  - kmod-usb-printer
+  - kmod-usb-storage-uas
+  - kmod-usb-xhci-hcd
+  - kmod-usb3
   - ppv4-firmware-lgm
   - kmod-intel_ppv4_fw_lgm
   - kmod-intel-extmark-x86
   - kmod-ppv4
   - kmod-p34x_phy_fwdl
   - mxl-gphy-fw-lgm
-  # - netifd-ugw
   - e2fsprogs
   - kmod-directconnect-dp
   - kmod-ppa-drv
@@ -147,13 +156,13 @@ packages:
   - pon-xpon-firmware-urx-b
   - pon-serdes-firmware-urx-b
   - kmod-pon-mbox-drv-eth
-  - kmod-pon_hgu_vuni
   - kmod-dp-eth-reinsert
   - kmod-pon-mcc-drv
   - kmod-pon-mcc-drv-filter
+  - kmod-mxl_pon_hgu_vuni_lgm
   - kmod-ebt-prio
-  - ethtool
-  - base-files-prpl-mb_urx
+  - ethtool-full
+  - base-files-prpl
   - ppmd-bin
   - pm-util
   - map
@@ -163,12 +172,11 @@ packages:
   - obudpst
   - speedtest-modules
   - kmod-dpl
-  - kmod-gpio-button-hotplug
+  - kmod-mxl_gpy
   - libugwhelper
   - libmsgapi
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
-  - kmod-mxl_gpy
   - xl2tpd-prpl
   - kmod-mcast-helper
   - openvswitch
@@ -239,6 +247,3 @@ diffconfig: |
   CONFIG_PACKAGE_strongswan-mod-xcbc=y
   CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
-  CONFIG_INTEL_X86_IMAGE_FORMAT_FIT=y
-  CONFIG_INTEL_X86_IMAGE_FORMAT_MKIMAGE=y
-  CONFIG_INTEL_X86_SINGLE_IMAGE=y
