@@ -53,7 +53,7 @@ feeds:
   - name: ppa
     uri: https://github.com/maxlinear/feed_ppa.git
     tracking_branch:  updk_9.2.4
-    revision: 34c93fbeaed63a08c5f5468a0effb745b72aec97
+    revision: e80996cebec7538ca8d9666c4135e813dd3e88ea
   - name: pp_net_adapter
     uri: https://github.com/maxlinear/feed_pp_net_adapter.git
     tracking_branch:  updk_9.2.4
@@ -89,7 +89,7 @@ feeds:
   - name: system_service
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.4
-    revision: 0e156e94a3ea1e632bb6878d593dfbb4e312d38c
+    revision: 718bd0bd8f884c1a65a4179c6174c7e2796dbcf8
 
 additional_packages:
   - feed: packages

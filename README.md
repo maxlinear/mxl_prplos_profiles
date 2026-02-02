@@ -2,11 +2,47 @@
  
 This is repository of profiles for all Maxlinear supported hardware platforms. 
 
+## Release Date
+* 6th Feb 2026
+
+## The UPDK Software 9.2.4 ED release is the first ED release in preparation for the PrplWare-5.0 Release.
+
+## Release Highlights
+```
+* The Wi‑Fi MxL317xx WLAN firmware has been upgraded to WLAN7.2.420 ED
+* The hostapd version has been updated to commit 95ad71157e3095c52d5212855ca232832b1b5085
+* Robust Security Network Overlap (RSNO) override support was added for MxL317xx devices operating in Multi‑Link Operation (MLO) mode
+* Backup and restore functionality was enabled using the TR‑181 data model
+* Open Broadband – UDP Speed Test (OB‑UDPST) capabilities were added through the TR‑471 data model
+```
+
+## obudpst with Mxl optimizations
+````
+* Currently by default opensource obudpst is built without any Mxl optimizations patches. 
+* For throughput improvements to apply Mxl optimizations patches please refer below link.
+  https://github.com/maxlinear/updk_patches/blob/master/UPDK_9.2.4_PATCHES/ob-udpst-mxl-optimizations/README
+```
+
+## Fixed issues
+```
+* PCF-2228 - ospv2: ppa: Slow ipsec throughput
+* PCF-2236 - ospv2: ospv2: GRE: iperf3 traffic stuck
+```
+
+## Known issues
+```
+* PCF-2229 - ospv2: iperf3 -R -u inside ipsec fails
+* PCF-2231 - ospv2: intel AES-NI: performances degrade after some seconds
+* PCF-2233 - ospv2: ipsec hw_offload: tunnel dies with iperf3
+* PCF-2315 - OSPv2: UPDK 9.2.3: CDRouter: ipv6_firewall_110 test fails due to IPv6 TCP connection timeout after fragmented port scan
+```
+Reference link: https://gitlab.com/prpl-foundation/prplos/prplos/-/wikis/Maxlinear-Open-Service-Platform/UPDK-9.2.4
+
 Select the appropriate profile to build images for any supported Maxlinear platform, as described in the QuickStart steps below.
  
 ## QuickStart:
  
-Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.3 Release.
+Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.4 Release.
  
 Complete these steps to create the basic software build for the OSPv2,OSPv2 B,MxL25641‑HDK‑2, with OpenWrt 24.10:
  
