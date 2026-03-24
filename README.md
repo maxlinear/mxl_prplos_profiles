@@ -5,7 +5,7 @@ This is repository of profiles for all Maxlinear supported hardware platforms.
 ## Release Date
 * 6th Feb 2026
 
-## The UPDK Software 9.2.4 ED release is the first ED release in preparation for the PrplWare-5.0 Release.
+## The UPDK Software 9.2.10 ED2 release is the second ED release in preparation for the PrplWare-5.0 Release.
 
 ## Release Highlights
 ```
@@ -42,7 +42,7 @@ Select the appropriate profile to build images for any supported Maxlinear platf
  
 ## QuickStart:
  
-Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.4 Release.
+Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.10-ED2 Release.
  
 Complete these steps to create the basic software build for the OSPv2,OSPv2 B,MxL25641‑HDK‑2, with OpenWrt 24.10:
  
@@ -56,7 +56,7 @@ cd prplos
 
 #### 3. Clone the prplos_mxl_profiles repository to obtain the required profile for any platforms.
 
-git clone -b updk_9.2.4 https://github.com/maxlinear/mxl_prplos_profiles.git
+git clone -b updk_9.2.10 https://github.com/maxlinear/mxl_prplos_profiles.git
 
 cp mxl_prplos_profiles/profiles/* profiles/
 
