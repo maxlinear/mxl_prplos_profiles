@@ -1,0 +1,47 @@
+---
+description: Add the debug features for the Maxlinear devices
+feeds:
+  - name: switch_cli
+    uri: https://github.com/maxlinear/feed_switch_api.git
+    tracking_branch: updk_9.2.10
+    revision: ebedecf51d1a0939c6a6cd3cfeb188b956aaab15
+
+packages:
+  - tcpdump
+  - perf
+  - switch_cli_ugw8
+  - memutil
+  - pon-ip-bridge
+  - pon-ip-full
+  - pon-tc-tiny
+  - -ip-bridge
+  - -ip-full
+  - -tc-tiny
+
+additional_packages:
+  - feed: packages
+    packages:
+      - stress
+      - pciutils
+      - io
+      - jq
+
+diffconfig: |
+  CONFIG_BUSYBOX_CONFIG_DEVMEM=y
+  CONFIG_KERNEL_DEVMEM=y
+  CONFIG_BUSYBOX_CONFIG_TELNETD=y
+  CONFIG_BUSYBOX_CONFIG_FEATURE_TELNETD_STANDALONE=y
+  CONFIG_BUSYBOX_CONFIG_FEATURE_TELNETD_PORT_DEFAULT=23
+  CONFIG_BUSYBOX_DEFAULT_FEATURE_TELNETD_INETD_WAIT=y
+  CONFIG_BUSYBOX_CONFIG_I2CDETECT=y
+  CONFIG_BUSYBOX_CONFIG_I2CDUMP=y
+  CONFIG_BUSYBOX_CONFIG_I2CGET=y
+  CONFIG_BUSYBOX_CONFIG_I2CSET=y
+  CONFIG_BUSYBOX_CONFIG_USLEEP=y
+  CONFIG_BUSYBOX_CONFIG_UUDECODE=y
+  CONFIG_BUSYBOX_CONFIG_UUENCODE=y
+  CONFIG_BUSYBOX_CONFIG_MPSTAT=y
+  CONFIG_BUSYBOX_CONFIG_WATCHDOG=y
+  CONFIG_PACKAGE_taskset=y
+  CONFIG_KERNEL_FTRACE=y
+  CONFIG_KERNEL_DYNAMIC_DEBUG=y

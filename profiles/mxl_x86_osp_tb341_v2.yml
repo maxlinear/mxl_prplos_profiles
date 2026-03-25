@@ -9,7 +9,7 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 0fbfb22b425b7817fc7e087c66b25fcf317758bf
+    revision: 69df662dfe3da26d6980068aceff2b305719a26f
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
@@ -40,8 +40,8 @@ feeds:
     revision: e7d4a7d576aff7ab3207f2f7261629542b7931a1
   - name: opensource_apps_prpl
     uri: https://github.com/maxlinear/feed_opensource_apps_prpl.git
-    tracking_branch:  updk_9.2.10
-    revision: 6b1b6184eee1b67f3352f732630bf63b5242dc1b
+    tracking_branch:  updk_9.2.10_dev
+    revision: aa8c9c2e1a16236a44b3b1973b284eeff98f2967
   - name: packet_learn
     uri: https://github.com/maxlinear/feed_packet_learn.git
     tracking_branch:  updk_9.2.10
@@ -49,7 +49,7 @@ feeds:
   - name: pon
     uri: https://github.com/maxlinear/feed_pon.git
     tracking_branch:  updk_9.2.10
-    revision: 2d022b0f3678bd7942060bc1cbc2b9e2c1c699a6
+    revision: 9b1ed1f302831e219b92241cce06ed2237fa7322
   - name: ppa
     uri: https://github.com/maxlinear/feed_ppa.git
     tracking_branch:  updk_9.2.10
@@ -73,7 +73,7 @@ feeds:
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: 9c533c15555d6ecd676aa90db09b6830b23feef0
+    revision: a5087d67fe64a2bfbfae12233713dc8b4c3700aa
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
@@ -90,6 +90,19 @@ feeds:
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
     revision: 32112c4fcbfe1a3f5254de90af8de881f1debb31
+  - name: opencryptoki
+    uri: https://github.com/maxlinear/feed_opencryptoki.git
+    tracking_branch:  updk_9.2.10
+    revision: 74a1cb4a4120c17824ba6d23d7c328edef4c565c
+
+additional_packages:
+  - feed: packages
+    packages:
+      - strongswan
+      - opensc
+      - liboptee-client
+      - pciutils
+      - vsftpd
 
 packages:
   - efr32-boot-config
@@ -170,7 +183,11 @@ packages:
   - libmsgapi
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
+  - xl2tpd-prpl
+  - openvswitch
   - kmod-mcast-helper
+  - libp11
+  - kmod-mxl-tee
   - conntrack
 
 diffconfig: |
@@ -198,4 +215,44 @@ diffconfig: |
   CONFIG_BUSYBOX_CONFIG_DEVMEM=y
   CONFIG_KERNEL_DEVMEM=y
   CONFIG_LGM_EIP123_SUPPORT=y
+  CONFIG_PACKAGE_strongswan-charon=y
+  CONFIG_PACKAGE_strongswan-default=y
+  CONFIG_PACKAGE_strongswan-ipsec=y
+  CONFIG_PACKAGE_strongswan-mod-aes=y
+  CONFIG_PACKAGE_strongswan-mod-attr=y
+  CONFIG_PACKAGE_strongswan-mod-connmark=y
+  CONFIG_PACKAGE_strongswan-mod-constraints=y
+  CONFIG_PACKAGE_strongswan-mod-des=y
+  CONFIG_PACKAGE_strongswan-mod-dnskey=y
+  CONFIG_PACKAGE_strongswan-mod-fips-prf=y
+  CONFIG_PACKAGE_strongswan-mod-gmp=y
+  CONFIG_PACKAGE_strongswan-mod-hmac=y
+  CONFIG_PACKAGE_strongswan-mod-kdf=y
+  CONFIG_PACKAGE_strongswan-mod-kernel-netlink=y
+  CONFIG_PACKAGE_strongswan-mod-md5=y
+  CONFIG_PACKAGE_strongswan-mod-mgf1=y
+  CONFIG_PACKAGE_strongswan-mod-nonce=y
+  CONFIG_PACKAGE_strongswan-mod-pem=y
+  CONFIG_PACKAGE_strongswan-mod-pgp=y
+  CONFIG_PACKAGE_strongswan-mod-pkcs1=y
+  CONFIG_PACKAGE_strongswan-mod-pubkey=y
+  CONFIG_PACKAGE_strongswan-mod-random=y
+  CONFIG_PACKAGE_strongswan-mod-rc2=y
+  CONFIG_PACKAGE_strongswan-mod-resolve=y
+  CONFIG_PACKAGE_strongswan-mod-revocation=y
+  CONFIG_PACKAGE_strongswan-mod-sha1=y
+  CONFIG_PACKAGE_strongswan-mod-sha2=y
+  CONFIG_PACKAGE_strongswan-mod-socket-default=y
+  CONFIG_PACKAGE_strongswan-mod-sshkey=y
+  CONFIG_PACKAGE_strongswan-mod-stroke=y
+  CONFIG_PACKAGE_strongswan-mod-updown=y
+  CONFIG_PACKAGE_strongswan-mod-vici=y
+  CONFIG_PACKAGE_strongswan-mod-x509=y
+  CONFIG_PACKAGE_strongswan-mod-xauth-generic=y
+  CONFIG_PACKAGE_strongswan-mod-xcbc=y
+  CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
+  CONFIG_PACKAGE_libopensc=y
+  CONFIG_PACKAGE_libopensc-pkcs11=y
+  CONFIG_PACKAGE_opensc-utils=y
+  CONFIG_PACKAGE_opensc-utils-pkcs11-tool=y
