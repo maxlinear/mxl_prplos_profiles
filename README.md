@@ -3,17 +3,19 @@
 This is repository of profiles for all Maxlinear supported hardware platforms. 
 
 ## Release Date
-* 6th Feb 2026
+* 27th March 2026
 
-## The UPDK Software 9.2.10 ED2 release is the second ED release in preparation for the PrplWare-5.0 Release.
+## The UPDK Software 9.2.10 ED release is the second ED release in preparation for the PrplWare-5.0 Release.
 
 ## Release Highlights
 ```
-* The Wi‑Fi MxL317xx WLAN firmware has been upgraded to WLAN7.2.420 ED
-* The hostapd version has been updated to commit 95ad71157e3095c52d5212855ca232832b1b5085
-* Robust Security Network Overlap (RSNO) override support was added for MxL317xx devices operating in Multi‑Link Operation (MLO) mode
-* Backup and restore functionality was enabled using the TR‑181 data model
-* Open Broadband – UDP Speed Test (OB‑UDPST) capabilities were added through the TR‑471 data model
+* PON subsystem version bump to 2.1.5
+* Linux kernel minor version upgrade from 5.15.194 to 5.15.200
+* RAM Optimization changes
+* Boot flow : Adapted prpl boot flow required for FEAT-29
+* pon_hgu_vuni LKM shall be used instead of in-tree LKM mxl_pon_hgu_vuni_lgm
+* Enabled conntrack-tools package for 'nfct' binary
+* WLAN subsystem version WLAN7.2.440 r1676+a+24
 ```
 
 ## obudpst with Mxl optimizations
@@ -25,15 +27,13 @@ This is repository of profiles for all Maxlinear supported hardware platforms.
 
 ## Fixed issues
 ```
-* PCF-2228 - ospv2: ppa: Slow ipsec throughput
-* PCF-2236 - ospv2: ospv2: GRE: iperf3 traffic stuck
+* PCF-2204-MXL ONU HAL agent uses wrong names for certain transceiver parameters
+* PCF-2233-ospv2: ipsec hw_offload: tunnel dies with iperf3
 ```
 
 ## Known issues
 ```
 * PCF-2229 - ospv2: iperf3 -R -u inside ipsec fails
-* PCF-2231 - ospv2: intel AES-NI: performances degrade after some seconds
-* PCF-2233 - ospv2: ipsec hw_offload: tunnel dies with iperf3
 * PCF-2315 - OSPv2: UPDK 9.2.3: CDRouter: ipv6_firewall_110 test fails due to IPv6 TCP connection timeout after fragmented port scan
 ```
 Reference link: https://gitlab.com/prpl-foundation/prplos/prplos/-/wikis/Maxlinear-Open-Service-Platform/UPDK-9.2.4
@@ -42,7 +42,7 @@ Select the appropriate profile to build images for any supported Maxlinear platf
  
 ## QuickStart:
  
-Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.10-ED2 Release.
+Below are sample steps to build the Mxl UPDK Software for UPDK-9.2.10-ED Release.
  
 Complete these steps to create the basic software build for the OSPv2,OSPv2 B,MxL25641‑HDK‑2, with OpenWrt 24.10:
  
@@ -90,20 +90,24 @@ prplos-intel_x86-lgm-PRPL_OSP_v2-tb341_wav700_kernel_dtb.fit  **->** **Kernel+dt
 
 ext4.fs -> **ext4 file system.**
 
+prplos-intel_x86-lgm-PRPL_OSP_v2_rootfs.fit  **->** **Rootfs**
+
 u-boot.itb, u-boot-plus-spl-emmc.bin                                          **->** **U-Boot binary file.**
 
-u-boot-recovery.asc 							                                                   **->** **U-Boot recovery file.**
+u-boot-recovery.bin                                                           **->** **U-Boot recovery file.**
 
 #### OSPV2-B Image details:
-prplos-intel_x86-lgm-PRPL_OSP_v2-wgrtd159be_b_wav700_fullimage.fit             **->** **Fullimage for ETH WAN/PON WAN**
+prplos-intel_x86-lgm-PRPL_OSP_v2-wgrtd159be_b_wav700_fullimage.fit            **->** **Fullimage for ETH WAN/PON WAN**
 
-prplos-intel_x86-lgm-PRPL_OSP_v2-wgrtd159be_b_wav700_kernel_dtb.fit            **->** **Kernel+dtb.**
+prplos-intel_x86-lgm-PRPL_OSP_v2-wgrtd159be_b_wav700_kernel_dtb.fit           **->** **Kernel+dtb.**
 
 ext4.fs                                                                       **->** **ext4 file system.**
 
+prplos-intel_x86-lgm-PRPL_OSP_v2_rootfs.fit  **->** **Rootfs**
+
 u-boot.itb, u-boot-plus-spl-emmc.bin                                          **->** **U-Boot binary file.**
 
-u-boot-recovery.asc                                                           **->** **U-Boot recovery file.**
+u-boot-recovery.bin                                                           **->** **U-Boot recovery file.**
 
 #### MxL25641‑HDK‑2 Image details:
 
@@ -112,6 +116,8 @@ prplos-intel_x86-lgm-PRPL_MB_URX-641_wav700_fullimage.fit                    **-
 prplos-intel_x86-lgm-PRPL_MB_URX-641_wav700_kernel_dtb.fit                   **->** **kernel+dtb.**
 
 ext4.fs                                                                      **->** **ext4 file system.**
+
+prplos-intel_x86-lgm-PRPL_MB_URX_rootfs.fit **->** **Rootfs**
 
 u-boot.itb, u-boot-plus-spl-emmc.bin                                         **->** **U-Boot binary file.**
 
