@@ -19,7 +19,7 @@ This is repository of profiles for all Maxlinear supported hardware platforms.
 ```
 
 ## obudpst with Mxl optimizations
-````
+```
 * Currently by default opensource obudpst is built without any Mxl optimizations patches. 
 * For throughput improvements to apply Mxl optimizations patches please refer below link.
   https://github.com/maxlinear/updk_patches/blob/master/UPDK_9.2.4_PATCHES/ob-udpst-mxl-optimizations/README
