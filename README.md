@@ -36,7 +36,7 @@ This is repository of profiles for all Maxlinear supported hardware platforms.
 * PCF-2233 - ospv2: ipsec hw_offload: tunnel dies with iperf3
 * PCF-2315 - OSPv2: UPDK 9.2.3: CDRouter: ipv6_firewall_110 test fails due to IPv6 TCP connection timeout after fragmented port scan
 ```
-Reference link: https://gitlab.com/prpl-foundation/prplos/prplos/-/wikis/Maxlinear-Open-Service-Platform/UPDK-9.2.4
+Reference link: https://gitlab.com/prpl-foundation/prplos/prplos/-/wikis/MaxLinear-Open-Service-Platform/UPDK-9.2.10ED
 
 Select the appropriate profile to build images for any supported Maxlinear platform, as described in the QuickStart steps below.
  
