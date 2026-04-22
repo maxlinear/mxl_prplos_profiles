@@ -9,11 +9,11 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 7e086e4a000c8f731cbab15737f19119f2f90f26
+    revision: 8b71d6b078d740d1d41f3335e302563f666bd691
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
-    revision: f5e51daa3e089a59be3fbaba3ba1d0cb9dcb8bb5
+    revision: 7c245592b070171299a58928c6cd48aeb1a6b4db
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
@@ -69,11 +69,11 @@ feeds:
   - name: utils
     uri: https://github.com/maxlinear/feed_mxl_utils.git
     tracking_branch:  updk_9.2.10
-    revision: d82b27f1ca167d8735964af7f2676933b615cbf4
+    revision: 26359557e8391c8af406c8162ba58810f29e858e
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: a5087d67fe64a2bfbfae12233713dc8b4c3700aa
+    revision: 199af23b5a64e6582cbe0f09687817db6d8efae7
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
@@ -89,7 +89,11 @@ feeds:
   - name: system_service
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
-    revision: 32112c4fcbfe1a3f5254de90af8de881f1debb31
+    revision: c16980229c399a9af8990816cf78b9db75f3f689
+  - name: feed_swupdate
+    uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_swupdate.git
+    tracking_branch: dev_FEAT-29
+    revision: a446967d032c4ddc11283bada804d854e03d9f84
 
 additional_packages:
   - feed: packages
@@ -181,6 +185,19 @@ packages:
   - kmod-mcast-helper
   - openvswitch
   - conntrack
+  - swupdate
+  - libubootenv
+  - libblkid
+  - libuuid
+  - libext2fs
+  - libfdisk
+  - imagegenerator
+  - initramfs-generator
+  - blkid
+  - libfdt
+  - fdt-utils
+  - kmod-dm
+  - losetup
 
 diffconfig: |
   CONFIG_DEVEL=y
@@ -193,21 +210,7 @@ diffconfig: |
   CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_MB_URX=y
   # CONFIG_TARGET_ROOTFS_EXT4FS is not set
   CONFIG_BUILD_LOG=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-10g-lan-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-10g-lan-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-p34x-phy-emmc-prpl=y
   CONFIG_PACKAGE_pon-pa-template=m
   CONFIG_VERSION_FILENAMES=n
@@ -259,3 +262,33 @@ diffconfig: |
   CONFIG_PACKAGE_strongswan-mod-xcbc=y
   CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
+  CONFIG_IMAGEGENERATOR_BOARD="tb341_wav700"
+  CONFIG_OPENSOURCE_SWUPDATE_EXT_FILESYSTEM=y
+  CONFIG_OPENSOURCE_SWUPDATE_DISKPART_HANDLER=y
+  CONFIG_OPENSOURCE_SWUPDATE_DISKFORMAT_HANDLER=y
+  CONFIG_SAH_LIB_MFG_RO_PART_FILE="/dev/mmc0p13"
+  CONFIG_BUSYBOX_CONFIG_BLKID=y
+  CONFIG_BUSYBOX_CONFIG_BLOCKDEV=y
+  CONFIG_PACKAGE_libblkid=y
+  CONFIG_BUSYBOX_CONFIG_MODPROBE=y
+  CONFIG_EXTERNAL_CPIO=""
+  CONFIG_TARGET_SECURE_INITRAMFS=y
+  CONFIG_TARGET_SECURE_INITRAMFS_COMPRESSION_GZIP=y
+  CONFIG_INITRAMFS_GENERATOR_DEBUG=y
+  CONFIG_INITRAMFS_GENERATOR_FLASH_TYPE_EMMC=y
+  CONFIG_INITRAMFS_GENERATOR_ROOTFS_SIG_PRELOAD=y
+  CONFIG_INITRAMFS_GENERATOR_ROOTFS_SIG_PRELOAD_MANDATORY=y
+  CONFIG_KERNEL_DEVTMPFS=y
+  # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
+  CONFIG_BUSYBOX_CONFIG_LOSETUP=y
+  CONFIG_BUSYBOX_CONFIG_STAT=y
+  CONFIG_BUSYBOX_CONFIG_FEATURE_STAT_FORMAT=y
+  CONFIG_BUSYBOX_CONFIG_FEATURE_STAT_FILESYSTEM=y
+  CONFIG_SAH_LIB_MFG_RO_PART_FILE="/dev/mmcblk0p13"
+  CONFIG_IMAGEGENERATOR=y
+  CONFIG_SAH_LIB_MFG_GLOBAL_SIGNATURE=y
+  CONFIG_SAH_LIB_MFG_GLOBAL_SIGNATURE_PUBLIC_PEM_FILE="/security/smd_pub.pem"
+  CONFIG_SAH_LIB_MFG_SECURE_MFG_KERNEL_KEYRING_SUPPORT=y
+  CONFIG_SAH_LIB_MFG_SECURE_MFG_KERNEL_KEYRING_KEY_NAME="mfg:Kuk"
+  CONFIG_SAH_LIB_MFG_SECURE_MFG_KERNEL_KEYRING_IV_FILE="/rom/security/initramfs/Kuk-aes-iv.hex"
+  CONFIG_SYSREGISTER_RESET_BOOTCOUNT=y
