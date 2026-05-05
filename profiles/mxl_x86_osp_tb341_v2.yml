@@ -9,7 +9,7 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 8b71d6b078d740d1d41f3335e302563f666bd691
+    revision: e35e41c75c2ee6c343b40e7dcf6fc6fd8b62f14b
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
@@ -53,7 +53,7 @@ feeds:
   - name: ppa
     uri: https://github.com/maxlinear/feed_ppa.git
     tracking_branch:  updk_9.2.10
-    revision: 3709b8b541f29665153135b40e53d92b9ebed287
+    revision: a73c4b8ef708f2bfd414053b7ed35bacabfa6f70
   - name: pp_net_adapter
     uri: https://github.com/maxlinear/feed_pp_net_adapter.git
     tracking_branch:  updk_9.2.10
@@ -194,7 +194,7 @@ diffconfig: |
   CONFIG_DEVEL=y
   CONFIG_EXTRA_OPTIMIZATION="-fno-caller-saves -fno-plt -Wno-error=deprecated-declarations -Wno-error=address"
   CONFIG_KERNEL_GIT_CLONE_URI="https://github.com/maxlinear/linux.git"
-  CONFIG_KERNEL_GIT_REF="UPDK_9.2.10-ED2"
+  CONFIG_KERNEL_GIT_REF="UPDK_9.2.10-1"
   CONFIG_GPON_OMCI_ONU_UBUS_INTERFACE=y
   CONFIG_TARGET_MULTI_PROFILE=y
   CONFIG_TARGET_PER_DEVICE_ROOTFS=y
