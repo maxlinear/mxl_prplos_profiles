@@ -9,11 +9,11 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: e35e41c75c2ee6c343b40e7dcf6fc6fd8b62f14b
+    revision: 811c0dceb63971058a7c1980930d3172891cdff8
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
-    revision: 37a61ebf1b1c2f61b23a36674859332d8225c4ef
+    revision: bf9c6cf393764fa0b451fd38b851ad656635ad45
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
@@ -73,7 +73,7 @@ feeds:
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: 199af23b5a64e6582cbe0f09687817db6d8efae7
+    revision: cc408523b441806e776187e7a8bfe8c1b44165b1
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
@@ -90,10 +90,6 @@ feeds:
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
     revision: c16980229c399a9af8990816cf78b9db75f3f689
-  - name: feed_swupdate
-    uri: https://gitlab.com/prpl-foundation/prplos/feeds/feed_swupdate.git
-    tracking_branch: dev_FEAT-29
-    revision: a446967d032c4ddc11283bada804d854e03d9f84
 
 additional_packages:
   - feed: packages
@@ -185,19 +181,6 @@ packages:
   - kmod-mcast-helper
   - openvswitch
   - conntrack
-  - swupdate
-  - libubootenv
-  - libblkid
-  - libuuid
-  - libext2fs
-  - libfdisk
-  - imagegenerator
-  - initramfs-generator
-  - blkid
-  - libfdt
-  - fdt-utils
-  - kmod-dm
-  - losetup
 
 diffconfig: |
   CONFIG_DEVEL=y
@@ -222,8 +205,6 @@ diffconfig: |
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_GET=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_PUT=y
   CONFIG_BUSYBOX_CONFIG_TFTP=y
-  CONFIG_BUSYBOX_CONFIG_DEVMEM=y
-  CONFIG_KERNEL_DEVMEM=y
   CONFIG_LGM_EIP123_SUPPORT=y
   CONFIG_PACKAGE_strongswan-charon=y
   CONFIG_PACKAGE_strongswan-default=y
@@ -263,32 +244,5 @@ diffconfig: |
   CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
   CONFIG_IMAGEGENERATOR_BOARD="tb341_wav700"
-  CONFIG_OPENSOURCE_SWUPDATE_EXT_FILESYSTEM=y
-  CONFIG_OPENSOURCE_SWUPDATE_DISKPART_HANDLER=y
-  CONFIG_OPENSOURCE_SWUPDATE_DISKFORMAT_HANDLER=y
-  CONFIG_SAH_LIB_MFG_RO_PART_FILE="/dev/mmc0p13"
-  CONFIG_BUSYBOX_CONFIG_BLKID=y
-  CONFIG_BUSYBOX_CONFIG_BLOCKDEV=y
-  CONFIG_PACKAGE_libblkid=y
-  CONFIG_BUSYBOX_CONFIG_MODPROBE=y
-  CONFIG_EXTERNAL_CPIO=""
-  CONFIG_TARGET_SECURE_INITRAMFS=y
-  CONFIG_TARGET_SECURE_INITRAMFS_COMPRESSION_GZIP=y
-  CONFIG_INITRAMFS_GENERATOR_DEBUG=y
-  CONFIG_INITRAMFS_GENERATOR_FLASH_TYPE_EMMC=y
-  CONFIG_INITRAMFS_GENERATOR_ROOTFS_SIG_PRELOAD=y
-  CONFIG_INITRAMFS_GENERATOR_ROOTFS_SIG_PRELOAD_MANDATORY=y
-  CONFIG_KERNEL_DEVTMPFS=y
-  # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
-  CONFIG_BUSYBOX_CONFIG_LOSETUP=y
-  CONFIG_BUSYBOX_CONFIG_STAT=y
-  CONFIG_BUSYBOX_CONFIG_FEATURE_STAT_FORMAT=y
-  CONFIG_BUSYBOX_CONFIG_FEATURE_STAT_FILESYSTEM=y
   CONFIG_SAH_LIB_MFG_RO_PART_FILE="/dev/mmcblk0p13"
-  CONFIG_IMAGEGENERATOR=y
-  CONFIG_SAH_LIB_MFG_GLOBAL_SIGNATURE=y
-  CONFIG_SAH_LIB_MFG_GLOBAL_SIGNATURE_PUBLIC_PEM_FILE="/security/smd_pub.pem"
-  CONFIG_SAH_LIB_MFG_SECURE_MFG_KERNEL_KEYRING_SUPPORT=y
-  CONFIG_SAH_LIB_MFG_SECURE_MFG_KERNEL_KEYRING_KEY_NAME="mfg:Kuk"
-  CONFIG_SAH_LIB_MFG_SECURE_MFG_KERNEL_KEYRING_IV_FILE="/rom/security/initramfs/Kuk-aes-iv.hex"
-  CONFIG_SYSREGISTER_RESET_BOOTCOUNT=y
+  CONFIG_SECURESTORE_LABEL="config"
