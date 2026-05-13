@@ -73,7 +73,7 @@ feeds:
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: cc408523b441806e776187e7a8bfe8c1b44165b1
+    revision: 7032690ddfafff5453bcab0246f23bb4e2720134
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
