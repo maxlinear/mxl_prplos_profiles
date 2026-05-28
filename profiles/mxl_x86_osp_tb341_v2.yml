@@ -9,11 +9,11 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 69df662dfe3da26d6980068aceff2b305719a26f
+    revision: a772f9b255c73d6101ed49ec613af1b8f148b577
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
-    revision: f5e51daa3e089a59be3fbaba3ba1d0cb9dcb8bb5
+    revision: a2c9d2b1791ce18e74047d90a984b5d3393371ea
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
@@ -53,7 +53,7 @@ feeds:
   - name: ppa
     uri: https://github.com/maxlinear/feed_ppa.git
     tracking_branch:  updk_9.2.10
-    revision: 3709b8b541f29665153135b40e53d92b9ebed287
+    revision: a73c4b8ef708f2bfd414053b7ed35bacabfa6f70
   - name: pp_net_adapter
     uri: https://github.com/maxlinear/feed_pp_net_adapter.git
     tracking_branch:  updk_9.2.10
@@ -69,11 +69,11 @@ feeds:
   - name: utils
     uri: https://github.com/maxlinear/feed_mxl_utils.git
     tracking_branch:  updk_9.2.10
-    revision: d82b27f1ca167d8735964af7f2676933b615cbf4
+    revision: 26359557e8391c8af406c8162ba58810f29e858e
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: a5087d67fe64a2bfbfae12233713dc8b4c3700aa
+    revision: e7ee959413c64c48986eaa4d7384b62be856a961
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
@@ -89,7 +89,7 @@ feeds:
   - name: system_service
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
-    revision: 32112c4fcbfe1a3f5254de90af8de881f1debb31
+    revision: c16980229c399a9af8990816cf78b9db75f3f689
   - name: opencryptoki
     uri: https://github.com/maxlinear/feed_opencryptoki.git
     tracking_branch:  updk_9.2.10
@@ -194,7 +194,7 @@ diffconfig: |
   CONFIG_DEVEL=y
   CONFIG_EXTRA_OPTIMIZATION="-fno-caller-saves -fno-plt -Wno-error=deprecated-declarations -Wno-error=address"
   CONFIG_KERNEL_GIT_CLONE_URI="https://github.com/maxlinear/linux.git"
-  CONFIG_KERNEL_GIT_REF="UPDK_9.2.10-ED2"
+  CONFIG_KERNEL_GIT_REF="UPDK_9.2.10-1"
   CONFIG_GPON_OMCI_ONU_UBUS_INTERFACE=y
   CONFIG_TARGET_MULTI_PROFILE=y
   CONFIG_TARGET_PER_DEVICE_ROOTFS=y
@@ -256,3 +256,6 @@ diffconfig: |
   CONFIG_PACKAGE_libopensc-pkcs11=y
   CONFIG_PACKAGE_opensc-utils=y
   CONFIG_PACKAGE_opensc-utils-pkcs11-tool=y
+  CONFIG_IMAGEGENERATOR_BOARD="tb341_wav700"
+  CONFIG_SAH_LIB_MFG_RO_PART_FILE="/dev/mmcblk0p13"
+  CONFIG_SECURESTORE_LABEL="config"

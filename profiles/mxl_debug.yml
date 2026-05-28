@@ -3,7 +3,7 @@ description: Add the debug features for the Maxlinear devices
 feeds:
   - name: switch_cli
     uri: https://github.com/maxlinear/feed_switch_api.git
-    tracking_branch: updk_9.2.10
+    tracking_branch:  updk_9.2.10
     revision: ebedecf51d1a0939c6a6cd3cfeb188b956aaab15
 
 packages:
