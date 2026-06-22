@@ -5,6 +5,10 @@ target: intel_x86
 subtarget: lgm
 external_target: True
 description: Build images for the Maxlinear x86 devices - OSP TB341 v2
+
+include:
+  - secure_boot_emmc
+
 feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
@@ -13,7 +17,7 @@ feeds:
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
-    revision: 35946d87e4efd5a1502aa518976e507ce06267f9
+    revision: 06a853e631c5d2bc5c179f12f959da6b335d3964
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
@@ -69,7 +73,7 @@ feeds:
   - name: utils
     uri: https://github.com/maxlinear/feed_mxl_utils.git
     tracking_branch:  updk_9.2.10
-    revision: 182f620aa1bdf8528d509ee9fb30951276f9a298
+    revision: 166bd48504edbf890119a3a04e4c78da54c5c102
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
