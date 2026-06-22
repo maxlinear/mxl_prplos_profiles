@@ -4,11 +4,11 @@ profiles:
 target: intel_x86
 subtarget: lgm
 external_target: True
-description: Build images for the Maxlinear x86 devices - URX641 and URX851
+description: Build images for the Maxlinear x86 devices - URX851
 
 include:
   - secure_boot_emmc
-    
+
 feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
@@ -103,13 +103,13 @@ additional_packages:
   - feed: packages
     packages:
       - strongswan
-      - opensc
-      - liboptee-client
-      - pciutils
       - vsftpd
+      - opensc
+      - pcsc-lite
+      - liboptee-client
+      - vxlan
 
 packages:
-  - efr32-boot-config
   - kmod-mxl_eth_drv
   - kmod-mxl-xpcs
   - kmod-gwdpa-dpm
@@ -130,6 +130,7 @@ packages:
   - kmod-ppv4
   - kmod-p34x_phy_fwdl
   - mxl-gphy-fw-lgm
+  # - netifd-ugw
   - e2fsprogs
   - kmod-directconnect-dp
   - kmod-ppa-drv
@@ -148,10 +149,11 @@ packages:
   - vpn-firmware-lgm
   - kmod-ipsec4-offload
   - kmod-ipsec6-offload
-  - pon-libnl
   - gpon-omci-onu-binary
   - pon-mcc-lib
   - pon-lib
+  - efr32-boot-config
+  - pon-libnl
   - pon-net-lib
   - pon-img-lib
   - pon-tools
@@ -176,6 +178,7 @@ packages:
   - ppmd-bin
   - pm-util
   - map
+  # - signingutil
   - kmod-intel-qos
   - kmod-qos-tc
   - partx-utils
@@ -183,16 +186,31 @@ packages:
   - speedtest-modules
   - kmod-dpl
   - kmod-mxl_gpy
+  - libhelper
+  - libscapi
   - libugwhelper
   - libmsgapi
+  - kmod-intel-icc-regmap-x86
+  - kmod-intel_noc_firewall
+  - kmod-mxl_icc_driver
+  - kmod-mxl-tee
+  - kmod-mxl_mps2_driver
+  - kmod-sse_driver_lgm
+  - kmod-sse_ssal_driver_lgm
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
-  - xl2tpd-prpl
+  - sse_fapi_lgm-secdbg_test_app
+  - seccrypto-client
   - kmod-mcast-helper
+  - libmcastdaemon
+  - libmcastfapi
+  - mcastcli
+  - signingutil
   - openvswitch
+  - opencryptoki
   - libp11
-  - kmod-mxl-tee
   - conntrack
+  - mod-wanmgr-system-ospv2
 
 diffconfig: |
   CONFIG_DEVEL=y
@@ -205,34 +223,50 @@ diffconfig: |
   CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_MB_URX=y
   # CONFIG_TARGET_ROOTFS_EXT4FS is not set
   CONFIG_BUILD_LOG=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_pon-pa-template=m
+  CONFIG_PACKAGE_uboot-octopus-urx641-sec-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-secure-overlay-p34x-phy-emmc-prpl=y
+  # CONFIG_PACKAGE_uboot-octopus-urx641-emmc-cust-img is not set
+  # CONFIG_PACKAGE_uboot-octopus-urx641-emmc-field-img is not set
+  # CONFIG_PACKAGE_uboot-octopus-urx641-emmc-manuboot-img is not set
+  CONFIG_PACKAGE_uboot-octopus-urx851-sec-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx851-secure-overlay-p34x-phy-emmc-prpl=y
+  # CONFIG_PACKAGE_uboot-octopus-urx851-emmc-cust-img is not set
+  # CONFIG_PACKAGE_uboot-octopus-urx851-emmc-field-img is not set
+  # CONFIG_PACKAGE_uboot-octopus-urx851-emmc-manuboot-img is not set
+  CONFIG_PACKAGE_uboot-octopus-urx641-sec-fit-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-sec-overlay-fit-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx851-sec-fit-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx851-sec-overlay-fit-p34x-phy-emmc-prpl=y
   CONFIG_VERSION_FILENAMES=n
   CONFIG_VERSION_CODE_FILENAMES=n
   # CONFIG_PACKAGE_bios_images is not set
   CONFIG_BUILD_SDK="prplos"
+  CONFIG_IMAGEOPT=y
+  CONFIG_INTEL_X86_SECBOOT=y
+  CONFIG_INTEL_X86_AIC_BASEADDR=0x010000000
+  CONFIG_INTEL_X86_CERTIFICATION="/nfs/site/proj/chdsw_ci/telco/dist/Secureboot_Keys/LGM_Keys_Vault/Product/384-bit_certificate_product_a.bin"
+  CONFIG_INTEL_X86_CERTIFICATION_SUPPORT=y
+  CONFIG_INTEL_X86_DTB_ROLLBACKID=0x1
+  CONFIG_INTEL_X86_ENC_KEY="ENCkey.bin"
+  CONFIG_INTEL_X86_KERNEL_BASEADDR=0x8200000
+  CONFIG_INTEL_X86_KERNEL_METADATA=y
+  CONFIG_INTEL_X86_KERNEL_ROLLBACKID=0x1
+  CONFIG_INTEL_X86_PRIVATE_KEY="/nfs/site/proj/chdsw_ci/telco/dist/Secureboot_Keys/LGM_Keys_Vault/Product/384-bit_keypair_product_a.der"
+  CONFIG_INTEL_X86_PROD_UNIQUE_KEY="/nfs/site/proj/chdsw_ci/telco/dist/Secureboot_Keys/LGM_Keys_Vault/Product/256-bit_huk_product.bin"
+  CONFIG_INTEL_X86_ROOTFS_ROLLBACKID=0x1
+  CONFIG_INTEL_X86_SIGNTOOL="/nfs/site/proj/chdsw_ci/telco/dist/Secureboot_Keys/LGM_Tools/signtool"
+  CONFIG_INTEL_X86_TEP_BASEADDR=0x8200000
+  CONFIG_INTEL_X86_TEP_ROLLBACKID=0x1
+  CONFIG_INTEL_X86_KERNEL_FLEXI_ROLLBACKID=0x1
+  CONFIG_INTEL_X86_ROOTFS_FLEXI_ROLLBACKID=0x1
+  # CONFIG_INTEL_X86_EXTERNAL_IMAGE_SIGNING=y
+  # CONFIG_INTEL_X86_SIGNING_SER_USER=""
+  # CONFIG_INTEL_X86_SIGNING_SER_PASS=""
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_BUSYBOX_CONFIG_TFTPD=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_GET=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_PUT=y
   CONFIG_BUSYBOX_CONFIG_TFTP=y
-  CONFIG_BUSYBOX_CONFIG_DEVMEM=y
-  CONFIG_KERNEL_DEVMEM=y
   CONFIG_LGM_EIP123_SUPPORT=y
   CONFIG_PACKAGE_strongswan-charon=y
   CONFIG_PACKAGE_strongswan-default=y
@@ -271,6 +305,12 @@ diffconfig: |
   CONFIG_PACKAGE_strongswan-mod-xcbc=y
   CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
+  CONFIG_INTEL_X86_IMAGE_FORMAT_FIT=y
+  CONFIG_INTEL_X86_IMAGE_FORMAT_MKIMAGE=y
+  CONFIG_INTEL_X86_SINGLE_IMAGE=y
+  CONFIG_INTEL_X86_MXL_SWU_IMAGE=y
+  # opencrypto and opensc packages
+  CONFIG_PACKAGE_opencryptoki=y
   CONFIG_PACKAGE_libopensc=y
   CONFIG_PACKAGE_libopensc-pkcs11=y
   CONFIG_PACKAGE_opensc-utils=y
