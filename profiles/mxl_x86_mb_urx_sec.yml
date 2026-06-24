@@ -7,7 +7,7 @@ external_target: True
 description: Build images for the Maxlinear x86 devices - URX851
 
 include:
-  - secure_boot_emmc
+  - mxl_secure_boot_emmc
 
 feeds:
   - name: intel_x86
@@ -22,10 +22,6 @@ feeds:
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
     revision: 5867aa97084a894e43f2ddda950a0d2ca39077d0
-  - name: mcast_service
-    uri: https://github.com/maxlinear/feed_mcast_service.git
-    tracking_branch:  updk_9.2.10
-    revision: 45e3296ae88a1314b8d952b908436b4e0f872004
   - name: datapath
     uri: https://github.com/maxlinear/feed_datapath.git
     tracking_branch:  updk_9.2.10
@@ -82,10 +78,6 @@ feeds:
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
     revision: 368b288ffd2dee37e574a6edeb3b90e01962d026
-  - name: speedtest
-    uri: https://github.com/maxlinear/speedtest.git
-    tracking_branch:  updk_9.2.10
-    revision: c7370a856e3ac3c0d938a29a9dde4038688e9403
   - name: mxl_sdk
     uri: https://github.com/maxlinear/feed_mxl_sdk.git
     tracking_branch:  updk_9.2.10
@@ -98,6 +90,14 @@ feeds:
     uri: https://github.com/maxlinear/feed_opencryptoki.git
     tracking_branch:  updk_9.2.10
     revision: 75d74b3573ed516ec408d192995cb8af02226dd8
+  - name: speedtest
+    uri: https://github.com/maxlinear/speedtest.git
+    tracking_branch:  updk_9.2.10
+    revision: c7370a856e3ac3c0d938a29a9dde4038688e9403
+  - name: mcast_service
+    uri: https://github.com/maxlinear/feed_mcast_service.git
+    tracking_branch:  updk_9.2.10
+    revision: 45e3296ae88a1314b8d952b908436b4e0f872004
 
 additional_packages:
   - feed: packages
@@ -152,8 +152,6 @@ packages:
   - gpon-omci-onu-binary
   - pon-mcc-lib
   - pon-lib
-  - efr32-boot-config
-  - pon-libnl
   - pon-net-lib
   - pon-img-lib
   - pon-tools
@@ -173,7 +171,7 @@ packages:
   - kmod-pon-mcc-drv
   - kmod-pon-mcc-drv-filter
   - kmod-ebt-prio
-  - ethtool-full
+  - ethtool
   - base-files-prpl
   - ppmd-bin
   - pm-util
@@ -185,6 +183,7 @@ packages:
   - obudpst
   - speedtest-modules
   - kmod-dpl
+  - kmod-gpio-button-hotplug
   - kmod-mxl_gpy
   - libhelper
   - libscapi
@@ -205,6 +204,8 @@ packages:
   - libmcastdaemon
   - libmcastfapi
   - mcastcli
+  - secure_upgrade_utils
+  - xl2tpd-prpl
   - signingutil
   - openvswitch
   - opencryptoki

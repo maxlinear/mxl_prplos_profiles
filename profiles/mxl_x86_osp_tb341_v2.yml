@@ -22,10 +22,6 @@ feeds:
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
     revision: 5867aa97084a894e43f2ddda950a0d2ca39077d0
-  - name: mcast_service
-    uri: https://github.com/maxlinear/feed_mcast_service.git
-    tracking_branch:  updk_9.2.10
-    revision: 45e3296ae88a1314b8d952b908436b4e0f872004
   - name: datapath
     uri: https://github.com/maxlinear/feed_datapath.git
     tracking_branch:  updk_9.2.10
@@ -86,6 +82,10 @@ feeds:
     uri: https://github.com/maxlinear/speedtest.git
     tracking_branch:  updk_9.2.10
     revision: c7370a856e3ac3c0d938a29a9dde4038688e9403
+  - name: mcast_service
+    uri: https://github.com/maxlinear/feed_mcast_service.git
+    tracking_branch:  updk_9.2.10
+    revision: 45e3296ae88a1314b8d952b908436b4e0f872004
   - name: mxl_sdk
     uri: https://github.com/maxlinear/feed_mxl_sdk.git
     tracking_branch:  updk_9.2.10
@@ -103,13 +103,12 @@ additional_packages:
   - feed: packages
     packages:
       - strongswan
+      - vsftpd
       - opensc
       - liboptee-client
-      - pciutils
-      - vsftpd
+      - vxlan
 
 packages:
-  - efr32-boot-config
   - kmod-mxl_eth_drv
   - kmod-mxl-xpcs
   - kmod-gwdpa-dpm
@@ -130,6 +129,7 @@ packages:
   - kmod-ppv4
   - kmod-p34x_phy_fwdl
   - mxl-gphy-fw-lgm
+  # - netifd-ugw
   - e2fsprogs
   - kmod-directconnect-dp
   - kmod-ppa-drv
@@ -171,7 +171,7 @@ packages:
   - kmod-pon-mcc-drv
   - kmod-pon-mcc-drv-filter
   - kmod-ebt-prio
-  - ethtool-full
+  - ethtool
   - base-files-prpl
   - ppmd-bin
   - pm-util
@@ -182,17 +182,24 @@ packages:
   - obudpst
   - speedtest-modules
   - kmod-dpl
+  - kmod-gpio-button-hotplug
   - kmod-mxl_gpy
   - libugwhelper
   - libmsgapi
   - sse_fapi_lgm
   - sse_fapi_lgm-sse_test_app
-  - xl2tpd-prpl
-  - openvswitch
   - kmod-mcast-helper
+  - libmcastdaemon
+  - libmcastfapi
+  - mcastcli
+  - secure_upgrade_utils
+  - xl2tpd-prpl
+  - signingutil
+  - openvswitch
   - libp11
   - kmod-mxl-tee
   - conntrack
+  - mod-wanmgr-system-ospv2
 
 diffconfig: |
   CONFIG_DEVEL=y
@@ -205,7 +212,13 @@ diffconfig: |
   CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_OSP_v2=y
   # CONFIG_TARGET_ROOTFS_EXT4FS is not set
   CONFIG_BUILD_LOG=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-fit-p34x-phy-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-4GB-ddr-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-4GB-ddr-overlay-p34x-phy-emmc-prpl=y
+  CONFIG_PACKAGE_uboot-octopus-urx641-4GB-ddr-fit-p34x-phy-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx641-4GB-ddr-overlay-fit-p34x-phy-emmc-prpl=y
   CONFIG_VERSION_FILENAMES=n
   CONFIG_VERSION_CODE_FILENAMES=n
@@ -216,8 +229,6 @@ diffconfig: |
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_GET=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_TFTP_PUT=y
   CONFIG_BUSYBOX_CONFIG_TFTP=y
-  CONFIG_BUSYBOX_CONFIG_DEVMEM=y
-  CONFIG_KERNEL_DEVMEM=y
   CONFIG_LGM_EIP123_SUPPORT=y
   CONFIG_PACKAGE_strongswan-charon=y
   CONFIG_PACKAGE_strongswan-default=y
@@ -256,6 +267,10 @@ diffconfig: |
   CONFIG_PACKAGE_strongswan-mod-xcbc=y
   CONFIG_PACKAGE_strongswan-swanctl=y
   CONFIG_KERNEL_FTRACE=y
+  CONFIG_INTEL_X86_IMAGE_FORMAT_FIT=y
+  CONFIG_INTEL_X86_IMAGE_FORMAT_MKIMAGE=y
+  CONFIG_INTEL_X86_SINGLE_IMAGE=y
+  CONFIG_INTEL_X86_MXL_SWU_IMAGE=y
   CONFIG_PACKAGE_libopensc=y
   CONFIG_PACKAGE_libopensc-pkcs11=y
   CONFIG_PACKAGE_opensc-utils=y
