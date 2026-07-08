@@ -48,7 +48,7 @@ Complete these steps to create the basic software build for the OSPv2,OSPv2 B,Mx
  
 #### 1. Clone prplOS repository from prpl Foundation:
 
-git clone -b latest-24.10 https://gitlab.com/prpl-foundation/prplos/prplos
+git clone -b prplware-v5.1.0 https://gitlab.com/prpl-foundation/prplos/prplos
 
 #### 2. Select the configuration to build and synchronize files for building the UPDK Software:
 
@@ -56,7 +56,7 @@ cd prplos
 
 #### 3. Clone the prplos_mxl_profiles repository to obtain the required profile for any platforms.
 
-git clone -b updk_9.2.10 https://github.com/maxlinear/mxl_prplos_profiles.git
+git clone -b updk_9.2.10_dev https://github.com/maxlinear/mxl_prplos_profiles.git
 
 cp mxl_prplos_profiles/profiles/* profiles/
 
