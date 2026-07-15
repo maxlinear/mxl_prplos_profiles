@@ -13,11 +13,11 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 913d3bc677bcbe9512b1b2a91b2e28e55b3f0a60
+    revision: 361c34e59d120596655cc11f33b6b562d9f666ee
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
-    revision: 06a853e631c5d2bc5c179f12f959da6b335d3964
+    revision: 062e1e5f21ca26c0d4cdfa4454c7ad22e13ce1cb
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
@@ -37,7 +37,7 @@ feeds:
   - name: gwdpa_dpm
     uri: https://github.com/maxlinear/feed_gwdpa-dpm.git
     tracking_branch:  updk_9.2.10
-    revision: 47f03464e686ebe65540a40d08ccac65f52a19e6
+    revision: c1345c64ad5eb02d01c29d75adbca9518b50ef06
   - name: misc
     uri: https://github.com/maxlinear/feed_common.git
     tracking_branch:  updk_9.2.10
@@ -73,11 +73,11 @@ feeds:
   - name: utils
     uri: https://github.com/maxlinear/feed_mxl_utils.git
     tracking_branch:  updk_9.2.10
-    revision: 166bd48504edbf890119a3a04e4c78da54c5c102
+    revision: d9b733353984614ab7551b1fcbe04c26e42358f2
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: 25b7d6a82a456d5debe9a5b035defd46a03a19f8
+    revision: b639a1e7e2ec6f2323406d2279dba95178a5e2ba
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
@@ -93,7 +93,7 @@ feeds:
   - name: system_service
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
-    revision: 2e40274d9d1114c5ac5c287d66ada0c2ffabc163
+    revision: 8b63c09641074a4141e4e43e09fe21b17d8bd632
 
 packages:
   - efr32-boot-config
