@@ -1,0 +1,38 @@
+diff --git a/net_core/mods/mod-vlan-ioctl/patches/priority_tag_support_fix.patch b/net_core/mods/mod-vlan-ioctl/patches/priority_tag_support_fix.patch
+new file mode 100644
+index 00000000..f870c014
+--- /dev/null
++++ b/net_core/mods/mod-vlan-ioctl/patches/priority_tag_support_fix.patch
+@@ -0,0 +1,13 @@
++diff --git a/src/mod_vlan_ioctl.c b/src/mod_vlan_ioctl.c
++index b48dcd7..f6bcc9d 100644
++--- a/src/mod_vlan_ioctl.c
+++++ b/src/mod_vlan_ioctl.c
++@@ -176,7 +176,7 @@ static int create_vlan(UNUSED const char* function_name,
++ 
++     //name can be empty, a default name will be used
++     when_str_empty_trace(llintf, exit, ERROR, "no lowerlayer interface, no port configured");
++-    when_false_trace(vlanid > 0, exit, ERROR, "VLANID needs to be greater than 0");
+++    when_false_trace(vlanid >= 0, exit, ERROR, "VLANID can not be less than 0");
++ 
++     SAH_TRACEZ_INFO(ME, "create vlan(name=%s llintf=%s vlanid=%d)", name, llintf, vlanid);
++ 
+diff --git a/net_core/plugins/ethernet-manager/patches/priority_tag_support_ethmanager.patch b/net_core/plugins/ethernet-manager/patches/priority_tag_support_ethmanager.patch
+new file mode 100644
+index 00000000..ded142c5
+--- /dev/null
++++ b/net_core/plugins/ethernet-manager/patches/priority_tag_support_ethmanager.patch
+@@ -0,0 +1,13 @@
++diff --git a/odl/ethernet-manager_vlantermination.odl b/odl/ethernet-manager_vlantermination.odl
++index 44dcf2e..298167e 100644
++--- a/odl/ethernet-manager_vlantermination.odl
+++++ b/odl/ethernet-manager_vlantermination.odl
++@@ -144,7 +144,7 @@
++             * @version 1.0
++             */
++             %persistent uint32 VLANID = 1 {
++-                on action validate call check_range [1, 4094];
+++                on action validate call check_range [0, 4094];
++                 on action validate call check_overlapping_vlantermination;
++                 userflags %upc;
++             }
