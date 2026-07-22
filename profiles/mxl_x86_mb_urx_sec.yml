@@ -13,11 +13,11 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 913d3bc677bcbe9512b1b2a91b2e28e55b3f0a60
+    revision: 361c34e59d120596655cc11f33b6b562d9f666ee
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10_dev
-    revision: bd428f06b7c25925ede6ed9762a1dd4ab0b44461
+    revision: 8cac36c8378b77e4173b7ae46efd85b2dfd551cc
   - name: eip
     uri: https://github.com/maxlinear/feed_eip.git
     tracking_branch:  updk_9.2.10
@@ -69,11 +69,11 @@ feeds:
   - name: utils
     uri: https://github.com/maxlinear/feed_mxl_utils.git
     tracking_branch:  updk_9.2.10
-    revision: ad03aecf2006e42db73872df55cf6d0d43c99462
+    revision: d9b733353984614ab7551b1fcbe04c26e42358f2
   - name: bootloader
     uri: https://github.com/maxlinear/feed_uboot.git
     tracking_branch:  updk_9.2.10
-    revision: 25b7d6a82a456d5debe9a5b035defd46a03a19f8
+    revision: b639a1e7e2ec6f2323406d2279dba95178a5e2ba
   - name: dpl
     uri: https://github.com/maxlinear/feed_dpl.git
     tracking_branch:  updk_9.2.10
@@ -85,7 +85,7 @@ feeds:
   - name: system_service
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
-    revision: 2e40274d9d1114c5ac5c287d66ada0c2ffabc163
+    revision: 8b63c09641074a4141e4e43e09fe21b17d8bd632
   - name: opencryptoki
     uri: https://github.com/maxlinear/feed_opencryptoki.git
     tracking_branch:  updk_9.2.10
@@ -98,6 +98,10 @@ feeds:
     uri: https://github.com/maxlinear/feed_mcast_service.git
     tracking_branch:  updk_9.2.10
     revision: 45e3296ae88a1314b8d952b908436b4e0f872004
+  - name: tep_fw
+    uri: https://github.com/maxlinear/feed_tep.git
+    tracking_branch:  updk_9.2.10
+    revision: 901518b9690b443633e10c484c4ba68aae1e6b9f
 
 additional_packages:
   - feed: packages
@@ -205,6 +209,7 @@ packages:
   - libmcastfapi
   - mcastcli
   - secure_upgrade_utils
+  - tep_fw
   - xl2tpd-prpl
   - signingutil
   - openvswitch
@@ -256,6 +261,8 @@ diffconfig: |
   CONFIG_INTEL_X86_PROD_UNIQUE_KEY="/nfs/site/proj/chdsw_ci/telco/dist/Secureboot_Keys/LGM_Keys_Vault/Product/256-bit_huk_product.bin"
   CONFIG_INTEL_X86_ROOTFS_ROLLBACKID=0x1
   CONFIG_INTEL_X86_SIGNTOOL="/nfs/site/proj/chdsw_ci/telco/dist/Secureboot_Keys/LGM_Tools/signtool"
+  CONFIG_INTEL_X86_TEP_BASEADDR=0x8200000
+  CONFIG_INTEL_X86_TEP_ROLLBACKID=0x1
   CONFIG_INTEL_X86_TEP_BASEADDR=0x8200000
   CONFIG_INTEL_X86_TEP_ROLLBACKID=0x1
   CONFIG_INTEL_X86_KERNEL_FLEXI_ROLLBACKID=0x1
