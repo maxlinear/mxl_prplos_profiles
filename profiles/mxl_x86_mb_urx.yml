@@ -213,20 +213,8 @@ diffconfig: |
   CONFIG_TARGET_DEVICE_intel_x86_lgm_DEVICE_PRPL_MB_URX=y
   # CONFIG_TARGET_ROOTFS_EXT4FS is not set
   CONFIG_BUILD_LOG=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-overlay-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-overlay-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx641-fit-p34x-phy-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-10g-lan-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx641-overlay-fit-p34x-phy-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-fit-10g-lan-emmc-prpl=y
-  CONFIG_PACKAGE_uboot-octopus-urx851-fit-p34x-phy-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-10g-lan-emmc-prpl=y
   CONFIG_PACKAGE_uboot-octopus-urx851-overlay-fit-p34x-phy-emmc-prpl=y
   CONFIG_PACKAGE_pon-pa-template=m
