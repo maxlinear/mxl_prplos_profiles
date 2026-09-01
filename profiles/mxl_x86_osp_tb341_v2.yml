@@ -13,7 +13,7 @@ feeds:
   - name: intel_x86
     uri: https://github.com/maxlinear/feed_target_x86.git
     tracking_branch:  updk_9.2.10
-    revision: 361c34e59d120596655cc11f33b6b562d9f666ee
+    revision: 91fb64e412c49727879ebdc58d55e422b75ad65c
   - name: rootfs
     uri: https://github.com/maxlinear/rootfs.git
     tracking_branch:  updk_9.2.10
@@ -25,7 +25,7 @@ feeds:
   - name: mcast_service
     uri: https://github.com/maxlinear/feed_mcast_service.git
     tracking_branch:  updk_9.2.10
-    revision: 45e3296ae88a1314b8d952b908436b4e0f872004
+    revision: 4fe6b0294af92a94d6b121f7b3f380dcfba19c1f
   - name: datapath
     uri: https://github.com/maxlinear/feed_datapath.git
     tracking_branch:  updk_9.2.10
@@ -37,7 +37,7 @@ feeds:
   - name: gwdpa_dpm
     uri: https://github.com/maxlinear/feed_gwdpa-dpm.git
     tracking_branch:  updk_9.2.10
-    revision: c1345c64ad5eb02d01c29d75adbca9518b50ef06
+    revision: eef47b0bea90b10dd4e46a0ca0ff9228301a539f
   - name: misc
     uri: https://github.com/maxlinear/feed_common.git
     tracking_branch:  updk_9.2.10
@@ -93,7 +93,7 @@ feeds:
   - name: system_service
     uri: https://github.com/maxlinear/feed_system_service.git
     tracking_branch:  updk_9.2.10
-    revision: 8b63c09641074a4141e4e43e09fe21b17d8bd632
+    revision: 5ee7c63c21bbb84551874d60e39fd833a87c33f9
 
 packages:
   - efr32-boot-config
